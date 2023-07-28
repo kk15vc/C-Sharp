@@ -24,20 +24,22 @@ namespace MyAccountDemo
         {
             // instantiate the class
             k = new MyAccount(); // object k will be created and all field members will be given default values
+            MyAccount k1 = new MyAccount(222, "Constructor", 2);
+
         }
 
         private void btnSet_Click(object sender, EventArgs e)
         {
             k.Id = int.Parse(txtId.Text);
-            k.Name = txtName.Text;
-            k.Balance = decimal.Parse(txtBalance.Text);
+            k.Namek = txtName.Text;
+            k.BalanceGetSet = decimal.Parse(txtBalance.Text);
         }
 
         private void btnGet_Click(object sender, EventArgs e)
         {
             txtId.Text = k.Id.ToString();
-            txtName.Text = k.Name;
-            txtBalance.Text = k.Balance.ToString();
+            txtName.Text = k.Namek;
+            txtBalance.Text = k.BalanceGetSet.ToString();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -45,6 +47,24 @@ namespace MyAccountDemo
             txtId.Clear();
             txtName.Clear();
             txtBalance.Clear();
+        }
+
+        private void btnDeposit_Click(object sender, EventArgs e)
+        {
+            k.Deposit(int.Parse(txtAmount.Text));
+            // just calling the get event to display the balance after deposit
+            this.btnGet_Click(sender,e);
+        }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            k.Withdraw(int.Parse(txtAmount.Text));
+            btnGet_Click(sender, e);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -46,6 +46,7 @@
             this.btnGetMB = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.txtMB = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblId
@@ -91,6 +92,7 @@
             // 
             // txtBalance
             // 
+            this.txtBalance.Enabled = false;
             this.txtBalance.Location = new System.Drawing.Point(265, 44);
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.Size = new System.Drawing.Size(100, 20);
@@ -162,6 +164,7 @@
             this.btnDeposit.TabIndex = 12;
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // btnWithdraw
             // 
@@ -171,6 +174,7 @@
             this.btnWithdraw.TabIndex = 13;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnSetMB
             // 
@@ -204,11 +208,22 @@
             this.txtMB.Size = new System.Drawing.Size(100, 20);
             this.txtMB.TabIndex = 17;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(172, 204);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 16;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmMyAccountDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 219);
+            this.ClientSize = new System.Drawing.Size(383, 239);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtMB);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.btnGetMB);
@@ -254,6 +269,7 @@
         private System.Windows.Forms.Button btnGetMB;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.TextBox txtMB;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 
