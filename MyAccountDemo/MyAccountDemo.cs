@@ -64,6 +64,7 @@ namespace MyAccountDemo
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            //closing the program
             this.Close();
         }
     }
