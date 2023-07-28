@@ -9,7 +9,10 @@ namespace MyAccountDemo
     class MyAccount
     {
 
-        public int Id;
+        private int p_Id;
+
+        //private int p_PrevID; //not working because of the modifier
+        private static int p_PrevID; // make is static - so that it does'nt change
 
         private string p_Name;
         
@@ -21,12 +24,13 @@ namespace MyAccountDemo
         {
             // I will set the initial values to the instance fields 
             p_Name = "From default Constructor";
-            Id = 1000;
+            p_PrevID++;
+            p_Id = p_PrevID;
         }
         //Parametrized 
         public MyAccount(int c_id, string c_name, decimal c_balance)
         {
-            this.Id = c_id;
+            this.p_Id = c_id;
             this.p_Name = c_name;
             this.p_Balance = c_balance;
         }
@@ -34,7 +38,7 @@ namespace MyAccountDemo
         //public Class_Name(Class_Name instance_of_class)
         // it's a copy of the above class we don't have set the fields value
         //public MyAccount(MyAccount k)
-        public MyAccount(MyAccount k):this (k.Id,k.p_Name,k.p_Balance)
+        public MyAccount(MyAccount k):this (k.p_Id,k.p_Name,k.p_Balance)
         {
             //this.Id = k.Id;
             //this.Name = k.Name;
@@ -68,6 +72,17 @@ namespace MyAccountDemo
             set
             {
                 p_Balance = value;
+            }
+        }
+        public int IDcode
+        {
+            get
+            {
+                return p_Id;
+            }
+            set
+            {
+                p_Id = value;
             }
         }
         /* I have made balalnce field disabled and now the balance will updated
