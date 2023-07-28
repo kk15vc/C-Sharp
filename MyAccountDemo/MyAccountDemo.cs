@@ -66,6 +66,7 @@ namespace MyAccountDemo
         {
             //closing the program
             this.Close();
+
         }
     }
 }
